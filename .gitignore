@@ -1,0 +1,6 @@
+# Ignore executables
+*.exe
+*.out
+
+# Ignore VS Code specific environment settings
+.vscode/

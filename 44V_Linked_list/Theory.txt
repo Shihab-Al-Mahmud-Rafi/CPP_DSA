@@ -1,0 +1,40 @@
+Nodes: Basically a type of container holding data for another nodes, also the adress of the next node and connects with each other, creating a chain.
+       Every node is just an object, just the difference is node have some specific structural role to play
+
+Linked list: A linear data structure having multiple nodes.
+
+
+Lets assume we declare an array, and we have to give it a fixed value of how many data it can handle. Array size cannot be changed during run time even if it needed
+
+Another scene is, vector(dynamic array) can resize itself if it needed, but the technique of vector is not efficient because when the size become full, it doubles its previous size
+. So ofc it takes time to do that.
+
+So to solve this problem, thats where link list come.
+
+So link list is a dynamic data structure.
+
+
+Types of link list:
+   1. Singly
+   2. Doubly
+   3. Circular 
+   4. Circular doubly
+
+-------------------------------------
+  
+Singly LL: Each nodes have a data and they points one direction only.
+
+Inseration: 
+     #insert at start/head
+     #insert at end/tail
+     #insert at any position
+     #deletion
+   
+-------------------------------------
+
+Doubly link list: Each node have data and they point to prevoius node and 
+                  the next node.
+
+
+
+
