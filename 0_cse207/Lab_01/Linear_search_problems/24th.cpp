@@ -17,6 +17,23 @@ void arrInput(int arr[], int n){
     }
 }
 
+int maxLeft(int arr[], int n){
+    int flag;
+    for(int i=n-1;i>0;i--){
+        flag=1;
+        for(int j=0;j<i;j++){
+            if(arr[i]<=arr[j]){
+                flag=0;
+                break;
+            }
+        }
+        if(flag==1){
+            return i;
+        }
+
+    }
+    return -1;
+}
 
 
 int main(){
@@ -28,7 +45,11 @@ int main(){
     cout<<"Enter the array: ";
     arrInput(num,n);
 
-    //cout<<"Maximum difference: "<<maxDiff(num,n)<<endl;
+    if(maxLeft(num,n)==-1) {
+        cout<<"No such number found."<<endl;
+        return 0;
+    }
+    cout<<"Output: "<<maxLeft(num,n)<<endl;
     return 0;
 
 }
