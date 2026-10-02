@@ -9,24 +9,36 @@ void arrInput(vector<int>& arr){
     }
 }
 
-void arrPrint(const vector<int>& arr, int n){
-    //int n=arr.size();
+void arrPrint(const vector<int>& arr){
+    int n=arr.size();
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
 }
 
-void deleting(vector<int>& arr,int& key){
-    int n=arr.size(),count=0;
+// void deleting(vector<int>& arr,int& key){
+//     int n=arr.size(),count=0;
+//     for(int i=0;i<n;i++){
+//         if(arr[i]==key){
+//             for(int j=i;j<n-1;j++){
+//                arr[j]=arr[j+1];
+//             }
+//             count++;
+//         }
+//     }
+//     key=count;
+// }
+
+void deleting(vector<int>& arr,int key){
+    int idx=0;
+    int n=arr.size();
     for(int i=0;i<n;i++){
-        if(arr[i]==key){
-            for(int j=i;j<n;j++){
-               arr[j]=arr[j+1];
-            }
-            count++;
+        if(arr[i]!=key){
+            arr[idx]=arr[i];
+            idx++;
         }
     }
-    key=count;
+    arr.resize(idx);
 }
 
 int main(){
@@ -41,11 +53,11 @@ int main(){
     cin>>key;
 
     deleting(num,key);
-    n=n-key;
+    n=key;
 
-    arrPrint(num,n);cout<<endl;
+    arrPrint(num);cout<<endl;
 
-    cout<<"New size: "<<n<<endl;
+    cout<<"New size: "<<num.size()<<endl;
     return 0;
 
 
