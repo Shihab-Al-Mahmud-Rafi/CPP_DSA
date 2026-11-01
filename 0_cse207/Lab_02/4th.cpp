@@ -24,17 +24,20 @@ int checkIdx(const vector<int>& arr, int key){
     return -1;
 }
 
-void deleteAt(vector<int>& arr, int& key){
-    int n=arr.size();
-    int a=checkIdx(arr,key);
-    if(a==-1){
-        key=-1;
-        return;
+bool deleteAt(vector<int>& arr, int key) {
+    int n = arr.size();
+    int a = checkIdx(arr, key);
+
+    if (a == -1) {
+        return false;
     }
-    for(int i=a;i<n;i++){
-        arr[i]=arr[i+1];
+
+    for (int i = a; i < n - 1; i++) {
+        arr[i] = arr[i + 1];
     }
-    //arr.erase(arr.end());
+
+    arr.pop_back();
+    return true;
 }
 
 int main(){
@@ -49,8 +52,8 @@ int main(){
     n=n-1;
 
     deleteAt(num,key);
-    if(key==-1){
-        cout<<"Element is not present."<<endl;
+    if (!deleteAt(num, key)) {
+        cout << "Element is not present." << endl;
         return 0;
     }
     arrPrint(num,n);

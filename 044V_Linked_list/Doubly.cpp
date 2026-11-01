@@ -57,6 +57,7 @@ void InsertAtTail(Node* &head, Node* &tail, int d){
         Node* temp=new Node(d);
         tail=temp;
         head=temp;
+        return;
     }
 
     Node* temp=new Node(d);
