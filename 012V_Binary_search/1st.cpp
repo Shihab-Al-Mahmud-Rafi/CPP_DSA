@@ -30,6 +30,4 @@ int main(){
 
     cout<<"Index number is: "<<index<<endl;
     return 0;
-
-    
 }
