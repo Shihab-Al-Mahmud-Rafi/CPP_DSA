@@ -55,6 +55,16 @@ void llInput( Node* &head, Node* &tail){
     }
 }
 
+void evenPrint(Node* head){
+
+    Node* temp=head;
+    while(temp!=nullptr){
+        if(temp->data%2==0){
+            cout<<temp->data<<" ";
+        }
+        temp=temp->next;
+    }cout<<endl;
+}
 
 
 int main(){
@@ -64,4 +74,6 @@ int main(){
     llInput(head, tail);
 
     print(head);
+    cout<<"The even numbers are: ";
+    evenPrint(head);
 }
