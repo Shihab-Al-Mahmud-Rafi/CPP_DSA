@@ -68,6 +68,28 @@ void print(Node* head){
     }cout<<endl;
 }
 
+void bubbleSort(Node* head){
+    if(head==nullptr || head->next==nullptr) return;
+        Node* lastNode=nullptr;
+        bool swapped=true;
+
+        while(swapped){
+            swapped=false;
+            Node* curr=head;
+            while(curr->next!=lastNode){
+                if(curr->n > curr->next->n){
+                    int temp=curr->n;
+                    curr->n=curr->next->n;
+                    curr->next->n=temp;
+                    swapped=true;
+                }
+                curr=curr->next;
+            }
+            lastNode=curr;
+        }
+}
+
+
 int main(){
 
     Node* head=nullptr;
@@ -80,6 +102,10 @@ int main(){
     reverseLL(head, tail);
   
     cout<<"After reversing: ";
+    print(head);
+
+    cout<<"After sorting: ";
+    bubbleSort(head);
     print(head);
     
 }
